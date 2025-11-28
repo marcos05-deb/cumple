@@ -323,8 +323,15 @@ body.no-scroll {
 .gift-icon {
     width: 280px; /* Reducido de 320px para ver el texto */
     height: auto;
-    margin-bottom: 3rem; /* Aumentado más para subirlo */
+    margin-bottom: 1rem;
     filter: drop-shadow(0 10px 20px rgba(123, 31, 162, 0.2));
+}
+
+/* Solo para escritorio - subir más el regalo */
+@media (min-width: 769px) {
+    .gift-icon {
+        margin-bottom: 4rem !important; /* Subirlo mucho más en escritorio */
+    }
 }
 
 /* Responsive para el regalo */
@@ -385,13 +392,13 @@ body.no-scroll {
     animation: pulse 2s infinite;
 }
 
-/* Solo para escritorio - hacer el texto más visible */
+/* Solo para escritorio - hacer el texto más visible y subirlo */
 @media (min-width: 769px) {
     .click-hint {
         font-size: 1.5rem !important; /* Más grande en escritorio */
         font-weight: 800 !important; /* Más bold */
         color: var(--text-primary) !important; /* Color más oscuro */
-        margin-top: 0.3rem !important; /* Subirlo más */
+        margin-top: -0.5rem !important; /* Subirlo mucho más (negativo para acercarlo al regalo) */
         text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9) !important; /* Sombra blanca para destacar */
         z-index: 10;
         position: relative;
