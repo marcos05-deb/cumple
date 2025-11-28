@@ -957,11 +957,14 @@ body.no-scroll {
         left: 15px;
         width: 42px;
         height: 42px;
+        margin: 0;
+        padding: 0;
     }
     
     .back-home-btn svg {
         width: 22px;
         height: 22px;
+        margin: 0;
     }
 }
 
@@ -971,12 +974,15 @@ body.no-scroll {
         left: 15px;
         width: 42px;
         height: 42px;
+        margin: 0;
+        padding: 0;
     }
     
     .back-home-btn svg {
         width: 22px;
         height: 22px;
         stroke-width: 2.5;
+        margin: 0;
     }
 }
 
@@ -1207,6 +1213,14 @@ body.no-scroll {
         left: auto; /* Resetear el left */
         width: 42px;
         height: 42px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .volume-icon {
+        min-width: 42px;
+        width: 42px;
+        height: 42px;
     }
 }
 
@@ -1214,6 +1228,14 @@ body.no-scroll {
     .volume-control-container {
         top: 15px; /* Alineado con el botón de volver */
         right: 15px;
+        width: 42px;
+        height: 42px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .volume-icon {
+        min-width: 42px;
         width: 42px;
         height: 42px;
     }
