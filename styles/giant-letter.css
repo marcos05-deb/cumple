@@ -1,0 +1,496 @@
+/* Carta Gigante (Final Screen) - DISEÑO REFERENCIA EXACTA */
+#final-letter-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    z-index: 1100; /* Aumentado para cubrir el footer */
+}
+
+.final-letter-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (max-width: 768px) {
+    .final-letter-wrapper {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .final-letter-wrapper {
+        padding-top: 60px;
+        padding-bottom: 30px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+/* Variables para 3D */
+:root {
+    --giant-shadow: 0 30px 60px rgba(74, 20, 140, 0.3), 0 15px 25px rgba(0,0,0,0.1);
+    --giant-border: 1px solid #9575cd;
+    --giant-bg-gradient: linear-gradient(135deg, #d1c4e9 0%, #b39ddb 100%);
+}
+
+.giant-envelope {
+    width: 90vw;
+    max-width: 500px;
+    height: 320px;
+    background: var(--giant-bg-gradient);
+    position: relative;
+    box-shadow: 
+        inset 0 2px 5px rgba(255,255,255,0.3),
+        var(--giant-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 12px; 
+    overflow: visible;
+    border: var(--giant-border);
+}
+
+@media (max-width: 768px) {
+    .giant-envelope {
+        width: 92vw;
+        max-width: 400px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .giant-envelope {
+        width: 95vw;
+        max-width: 350px;
+        height: 240px;
+    }
+}
+
+.giant-envelope:hover { 
+    transform: scale(1.02) translateY(-5px); 
+}
+
+/* Solapa Superior (Triángulo que baja) */
+.giant-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente un poco más fuerte (morado medio) */
+    background: linear-gradient(150deg, #e1bee7 0%, #ce93d8 45%, #ba68c8 100%);
+    /* Solapa un poco más larga para asegurar cierre (55%) */
+    clip-path: polygon(0 0, 100% 0, 50% 55%); 
+    transform-origin: top;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, z-index 0.6s; 
+    z-index: 10; 
+    border-radius: 12px 12px 0 0;
+    /* DOBLE SOMBRA: 
+       1. Primera capa fina y oscura para simular el BORDE (outline) 
+       2. Segunda capa difusa para la SOMBRA de profundidad 
+    */
+    filter: drop-shadow(0 0 1.5px #6a1b9a) drop-shadow(0 8px 15px rgba(0,0,0,0.25));
+}
+
+/* SIN rayitas punteadas (eliminadas) */
+.giant-flap::before, .giant-flap::after {
+    display: none;
+    content: none;
+}
+
+.giant-envelope.open .giant-flap {
+    transform: rotateX(180deg);
+    z-index: 0; /* Se va atrás */
+    transition-delay: 0s; /* Abre inmediato */
+    background: #9575cd; /* Oscurecer un poco al abrirse atrás */
+    filter: none;
+}
+
+/* Bolsillo Frontal (Triángulo inferior que sube) */
+.giant-pocket {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; 
+    pointer-events: none;
+    background-color: #d1c4e9; /* Morado suave */
+    background: linear-gradient(to top, #d1c4e9 0%, #e1bee7 100%); /* Gradiente inverso */
+    /* El bolsillo empieza un poco más abajo (53%) para que la solapa (55%) monte encima */
+    clip-path: polygon(0 0, 0% 100%, 100% 100%, 100% 0, 50% 53%);
+    border-radius: 12px;
+    /* Sombras internas para volumen */
+    box-shadow: inset 0 -10px 30px rgba(74, 20, 140, 0.15); 
+}
+
+/* Línea de borde para el bolsillo */
+.giant-pocket::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 1px rgba(149, 117, 205, 0.5); /* Borde morado más visible */
+    border-radius: 12px;
+    clip-path: inherit;
+    pointer-events: none;
+}
+
+/* Triángulo inferior específico (para darle color distinto si se quiere, o sombra) */
+.giant-pocket::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(74, 20, 140, 0.1), transparent 50%); /* Sombra inferior morada */
+    pointer-events: none;
+    clip-path: polygon(0 100%, 50% 55%, 100% 100%);
+}
+
+/* El contenido (Papel) */
+.giant-content {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 260px;
+    background: white;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s; 
+    transform: translateY(0);
+    z-index: 2; 
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .giant-content {
+        height: 240px;
+        padding: 15px;
+        left: 4%;
+        width: 92%;
+    }
+}
+
+@media (max-width: 480px) {
+    .giant-content {
+        height: 220px;
+        padding: 12px;
+        left: 3%;
+        width: 94%;
+    }
+}
+
+.giant-envelope.open .giant-content {
+    transform: translateY(-50px);
+    z-index: 6;
+    height: auto;
+    min-height: 300px;
+    overflow: visible;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s, z-index 0s 0.4s;
+}
+
+@media (max-width: 768px) {
+    .giant-envelope.open .giant-content {
+        min-height: 280px;
+        transform: translateY(-40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .giant-envelope.open .giant-content {
+        min-height: 250px;
+        transform: translateY(-30px);
+    }
+}
+
+.letter-paper {
+    font-family: 'Special Elite', monospace;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+    padding: 15px;
+    border: 1px dashed #ccc;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fffcf5;
+}
+
+@media (max-width: 768px) {
+    .letter-paper {
+        padding: 12px;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .letter-paper {
+        padding: 10px;
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+}
+
+.letter-paper h2 {
+    color: var(--heart-color);
+    font-family: 'Gloria Hallelujah', cursive;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .letter-paper h2 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .letter-paper h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        letter-spacing: 0.5px;
+    }
+}
+
+.signature {
+    margin-top: 20px;
+    font-weight: bold;
+    color: var(--text-secondary);
+    text-align: right;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .signature {
+        font-size: 1.1rem;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signature {
+        font-size: 1rem;
+        margin-top: 12px;
+    }
+}
+
+/* CORAZÓN PRINCIPAL (Cierre) */
+.giant-heart {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    z-index: 15;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    color: #ce93d8;
+}
+
+@media (max-width: 768px) {
+    .giant-heart {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .giant-heart {
+        font-size: 2.5rem;
+    }
+}
+
+.giant-envelope.open .giant-heart { 
+    opacity: 0; 
+    transform: translate(-50%, -50%) scale(0);
+}
+
+/* --- Animación de Corazones Voladores --- */
+.giant-flying-hearts {
+    position: absolute;
+    top: 60%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    z-index: 30; /* Encima de todo, incluso del papel abierto */
+    pointer-events: none;
+}
+
+.giant-heart-particle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    font-size: 2rem;
+    opacity: 0;
+    transform: translate(-50%, 0);
+}
+
+.giant-envelope.open .giant-heart-particle {
+    animation: giantFloatUp 2s ease-out forwards; /* Más lento y suave */
+    animation-delay: 0.3s; 
+}
+
+@keyframes giantFloatUp {
+    0% { opacity: 0; transform: translate(-50%, 0) scale(0.5); }
+    10% { opacity: 1; transform: translate(-50%, -40px) scale(1); }
+    80% { opacity: 0.8; transform: translate(-50%, -150px) scale(1.2); }
+    100% { opacity: 0; transform: translate(-50%, -200px) scale(1); }
+}
+
+.tap-instruction {
+    margin-top: 4rem;
+    color: var(--text-secondary);
+    font-weight: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    opacity: 1;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .tap-instruction {
+        margin-top: 3rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tap-instruction {
+        margin-top: 2rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Botón volver */
+.back-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: white;
+    border: 2px solid var(--text-secondary);
+    color: var(--text-secondary);
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.5s 0.5s;
+    pointer-events: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .back-btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-btn {
+        padding: 6px 18px;
+        font-size: 0.8rem;
+        margin-top: 12px;
+    }
+}
+
+.giant-envelope.open ~ .back-btn { 
+    opacity: 1; 
+    pointer-events: all;
+}
+
+/* Imagen de Gissi en la esquina */
+.gissi-corner-img {
+    position: fixed; /* Fixed para estar relativa a la ventana, no al container */
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    height: auto;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.8s ease 0.5s; 
+    pointer-events: none;
+    z-index: 1300; /* Sobre el pie de página (1200) */
+}
+
+.gissi-corner-img.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive adicional para pantallas medianas */
+@media (max-width: 640px) {
+    .final-letter-wrapper {
+        padding-bottom: 80px;
+    }
+    
+    .gissi-corner-img {
+        width: 200px;
+        right: -10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .giant-envelope {
+        width: 98vw;
+        height: 220px;
+    }
+    
+    .giant-content {
+        height: 200px;
+        padding: 10px;
+    }
+    
+    .giant-envelope.open .giant-content {
+        min-height: 230px;
+        transform: translateY(-25px);
+    }
+    
+    .letter-paper {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+    
+    .letter-paper h2 {
+        font-size: 1.1rem;
+    }
+    
+    .gissi-corner-img {
+        width: 140px;
+        right: -5px;
+    }
+}

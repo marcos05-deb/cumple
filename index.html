@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Gloria+Hallelujah&family=Inter:wght@400;600;800&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- Canvas para Confeti -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Música de Fondo -->
+    <audio id="bg-music" loop>
+        <!-- El usuario reemplazará esto con su archivo de música -->
+        <source src="music/cancion.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Control de Volumen (Flotante y sutil) -->
+    <div class="volume-control-container">
+        <span class="volume-icon">🎵 </span>
+        <div class="volume-slider-wrapper">
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.2">
+        </div>
+    </div>
+
+    <main class="app-container">
+        <!-- Pantalla de Bienvenida / Regalo -->
+        <section id="welcome-screen" class="screen active">
+            <!-- Banderines Decorativos de Fondo -->
+            <div class="bunting-container">
+                <div class="bunting-line"></div>
+                <!-- Más banderas con diferentes colores y toques dorados -->
+                <div class="flag color-1"></div>
+                <div class="flag color-2"></div>
+                <div class="flag color-3"></div>
+                <div class="flag color-4"></div>
+                <div class="flag color-5"></div>
+                <div class="flag color-1"></div>
+                <div class="flag color-2"></div>
+                <div class="flag color-3"></div>
+                <div class="flag color-4"></div>
+                <div class="flag color-5"></div>
+                <div class="flag color-1"></div>
+                <div class="flag color-2"></div>
+                <div class="flag color-3"></div>
+                <div class="flag color-4"></div>
+                <div class="flag color-5"></div>
+                <div class="flag color-1"></div>
+            </div>
+
+            <div class="content-wrapper">
+                <br><br><br><br><br>
+                <h1>¡Feliz Cumpleaños!</h1>
+                <p class="subtitle">Tenemos una sorpresa especial para ti</p>
+                
+                <div class="gift-container" id="gift-btn">
+                    <!-- Imagen de Regalo PNG -->
+                    <img src="images/regalo.png" class="gift-icon" alt="Regalo Sorpresa">
+                    <span class="click-hint">Toca para abrir</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nueva Imagen de Perros (Izquierda) - Fuera del section para z-index -->
+        <div class="dogs-image-container" id="dogs-container">
+            <img src="images/perros.png" class="dogs-img" alt="Perros">
+        </div>
+
+        <!-- Nueva Imagen de Cumpleañera (Derecha) - Fuera del section para z-index -->
+        <div class="birthday-girl-container" id="birthday-container">
+            <img src="images/cumpleañera.png" class="birthday-girl-img" alt="Cumpleañera">
+        </div>
+
+        <!-- Pantalla de Grid de Videos -->
+        <section id="grid-screen" class="screen">
+            <!-- Botón Volver al Inicio -->
+            <button id="btn-back-home" class="back-home-btn" title="Volver al Inicio">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </button>
+
+            <header class="grid-header">
+                <h2>Con amor, tu familia y amigos</h2>
+                <p>Toca un sobre para abrirlo</p>
+            </header>
+            
+            <div class="video-grid" id="video-grid">
+                <!-- Los sobres se generarán aquí con JS -->
+            </div>
+
+            <!-- Imagen decorativa extra (Les) -->
+            <div class="les-image-container">
+                <img src="images/les.png" class="les-img" alt="Les">
+            </div>
+
+            <!-- Botón para Sorpresa Final -->
+            <div class="final-surprise-container">
+                <button id="btn-final-surprise" class="btn-magic">
+                    Ver Sorpresa Final
+                </button>
+            </div>
+        </section>
+
+        <!-- Pantalla de Carta Gigante Final -->
+        <section id="final-letter-screen" class="screen">
+            <div class="final-letter-wrapper">
+                <div class="giant-envelope" id="giant-envelope">
+                    <div class="giant-flap"></div>
+                    <div class="giant-pocket"></div>
+                    <!-- Corazones animados para el sobre gigante -->
+                    <div class="giant-flying-hearts">
+                        <span class="giant-heart-particle">💜</span>
+                        <span class="giant-heart-particle">💜</span>
+                        <span class="giant-heart-particle">💜</span>
+                    </div>
+                    <div class="giant-content">
+                        <div class="letter-paper">
+                            <h2>Para la cumpleañera más hermosa:</h2>
+                            <p>
+                                Hoy celebramos otro año más de tu vida, deseamos de todo corazón 
+                                que estas cartitas te hayan sacado una gran sonrisa.
+                                <br><br>
+                                Eres increíble y mereces todo lo bonito del mundo.
+                                <br><br>
+                                ¡Feliz Cumpleaños!
+                            </p>
+                            <p class="signature">Tu familia y amigos</p>
+                        </div>
+                    </div>
+                    <div class="giant-heart">💜</div>
+                </div>
+                <p class="tap-instruction">Toca el sobre para leer</p>
+                <button class="back-btn" id="back-to-grid">Volver a los videos</button>
+            </div>
+        </section>
+
+        <!-- Imagen de Gissi (Ahora fuera del screen para controlar z-index sobre footer) -->
+        <img src="images/gissi.png" class="gissi-corner-img" id="gissi-img" alt="Gissi">
+
+        <!-- Modal de Video -->
+        <div id="video-modal" class="modal">
+            <div class="modal-content">
+                <div class="video-container">
+                    <video id="main-player" playsinline controls>
+                        <source src="" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                </div>
+                <button class="close-modal" id="close-modal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página pequeño -->
+    <footer class="main-footer">
+        <p>Creado con amor, por Gissi Girón.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
