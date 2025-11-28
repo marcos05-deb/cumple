@@ -829,6 +829,7 @@ body.no-scroll {
     opacity: 0;
     transform: translateX(-20px);
     transition: all 0.8s ease 0.5s;
+    overflow: visible;
 }
 
 /* Cuando el grid está activo, aparece suavemente */
@@ -841,15 +842,18 @@ body.no-scroll {
     width: 420px; /* ¡Mucho más grande! */
     height: auto;
     filter: drop-shadow(5px 5px 15px rgba(74, 20, 140, 0.3));
+    display: block;
+    object-fit: contain;
 }
 
 @media (max-width: 768px) {
     .les-image-container {
-        left: -20px;
+        left: 0;
+        bottom: 0;
     }
     
     .les-img {
-        width: 180px; /* Ajuste para tablet/móvil */
+        width: 200px; /* Ajuste para tablet/móvil */
         opacity: 0.9; 
     }
     
@@ -869,13 +873,24 @@ body.no-scroll {
 
 @media (max-width: 480px) {
     .les-image-container {
-        left: -10px;
-        bottom: 0;
+        left: 0;
+        bottom: 30px; /* Por encima del footer */
     }
     
     .les-img {
-        width: 140px; /* Más pequeño en móviles */
+        width: 160px; /* Más pequeño en móviles pero visible completo */
     }
+}
+
+@media (max-width: 360px) {
+    .les-image-container {
+        bottom: 25px;
+    }
+    
+    .les-img {
+        width: 140px;
+    }
+}
 
     .content-wrapper h1,
     .main-title {
