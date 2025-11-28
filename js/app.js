@@ -3,7 +3,7 @@ const VIDEOS = [
     { id: 1, src: 'videos/video1.mp4', title: 'Esposito' },
     { id: 2, src: 'videos/video2.mp4', title: 'Mamá' },
     { id: 3, src: 'videos/video3.mp4', title: 'Papá' },
-    { id: 4, src: 'videos/video4.mp4', title: 'Diego' },
+    { id: 4, src: 'videos/video4.mp4', title: 'Juan Diego' },
     { id: 5, src: 'videos/video5.mp4', title: 'Tu hermana favorita' },
     { id: 6, src: 'videos/video6.mp4', title: 'Kathy y Lambo' },
     { id: 7, src: 'videos/video7.mp4', title: 'Jenny' },
@@ -13,8 +13,9 @@ const VIDEOS = [
     { id: 11, src: 'videos/video11.mp4', title: 'Hayde' },
     { id: 12, src: 'videos/video12.mp4', title: 'Elvis' },
     { id: 13, src: 'videos/video13.mp4', title: 'Luis' },
-    { id: 14, src: 'videos/video14.mp4', title: 'Blanqui C' },
+    { id: 14, src: 'videos/video14.mp4', title: 'Blanqui C.' },
     { id: 15, src: 'videos/video15.mp4', title: 'Karen' },
+    { id: 16, src: 'videos/video16.mp4', title: 'Diego G. A.' },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
