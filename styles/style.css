@@ -1313,7 +1313,7 @@ body.no-scroll {
     position: fixed;
     bottom: 0; /* Ajustado a 0 para que esté al nivel del suelo */
     left: 0;
-    z-index: 0; /* Sobre el footer (1200) */
+    z-index: 1500; /* Sobre el footer (1200) */
     pointer-events: none;
     transition: opacity 0.8s ease;
 }
@@ -1329,7 +1329,7 @@ body.no-scroll {
     position: fixed;
     bottom: 0; /* Ajustado a 0 */
     right: 0;
-    z-index: 0; /* Sobre el footer (1200) */
+    z-index: 1500; /* Sobre el footer (1200) */
     pointer-events: none;
     transition: opacity 0.8s ease;
 }
