@@ -1313,6 +1313,7 @@ body.no-scroll {
     position: fixed;
     bottom: 0; /* Ajustado a 0 para que esté al nivel del suelo */
     left: 0;
+    z-index: 1300; /* Asegurar que estén sobre el footer */
     pointer-events: none;
     transition: opacity 0.8s ease;
 }
@@ -1328,6 +1329,7 @@ body.no-scroll {
     position: fixed;
     bottom: 0; /* Ajustado a 0 */
     right: 0;
+    z-index: 1300; /* Asegurar que estén sobre el footer */
     pointer-events: none;
     transition: opacity 0.8s ease;
 }
@@ -1368,12 +1370,12 @@ body.no-scroll {
     }
     
     .dogs-image-container {
-        bottom: 25px; /* Justo encima del footer pequeño */
+        bottom: 0; /* Pegadas al suelo */
         left: -5px;
     }
     
     .birthday-girl-container {
-        bottom: 25px; /* Justo encima del footer pequeño */
+        bottom: 0; /* Pegadas al suelo */
         right: -5px;
     }
 }
@@ -1388,12 +1390,12 @@ body.no-scroll {
     }
     
     .dogs-image-container {
-        bottom: 20px;
+        bottom: 0;
         left: -5px;
     }
     
     .birthday-girl-container {
-        bottom: 20px;
+        bottom: 0;
         right: -5px;
     }
 }
