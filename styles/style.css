@@ -967,16 +967,16 @@ body.no-scroll {
 
 @media (max-width: 480px) {
     .back-home-btn {
-        top: 12px;
-        left: 12px;
-        width: 40px;
-        height: 40px;
+        top: 15px;
+        left: 15px;
+        width: 42px;
+        height: 42px;
     }
     
     .back-home-btn svg {
-        width: 20px;
-        height: 20px;
-        stroke-width: 2;
+        width: 22px;
+        height: 22px;
+        stroke-width: 2.5;
     }
 }
 
@@ -1169,7 +1169,7 @@ body.no-scroll {
 /* --- CONTROL DE VOLUMEN FLOTANTE (MEJORADO) --- */
 .volume-control-container {
     position: fixed;
-    top: 70px; /* Un poco más abajo para no chocar con el de volver */
+    top: 20px; /* Alineado con el botón de volver */
     right: 20px;
     display: flex;
     align-items: center;
@@ -1179,12 +1179,12 @@ body.no-scroll {
     backdrop-filter: blur(10px);
     padding: 0; /* Padding dinámico */
     border-radius: 50px;
-    border: 2px solid var(--text-secondary);
-    box-shadow: 0 4px 10px rgba(123, 31, 162, 0.3);
+    border: 2px solid rgba(123, 31, 162, 0.4);
+    box-shadow: 0 2px 8px rgba(123, 31, 162, 0.2);
     z-index: 9999;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    width: 46px;
-    height: 46px;
+    width: 45px;
+    height: 45px;
     overflow: hidden;
     cursor: pointer;
     opacity: 0; /* Oculto inicialmente */
@@ -1202,8 +1202,20 @@ body.no-scroll {
 /* En móvil también ajustamos */
 @media (max-width: 768px) {
     .volume-control-container {
-        right: 10px;
+        top: 15px; /* Alineado con el botón de volver */
+        right: 15px;
         left: auto; /* Resetear el left */
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (max-width: 480px) {
+    .volume-control-container {
+        top: 15px; /* Alineado con el botón de volver */
+        right: 15px;
+        width: 42px;
+        height: 42px;
     }
 }
 
