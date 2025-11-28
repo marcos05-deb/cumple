@@ -873,7 +873,7 @@ body.no-scroll {
 
 @media (max-width: 480px) {
     .les-image-container {
-        left: -10;
+        left: 0;
         bottom: 0; /* Por encima del footer */
     }
     
