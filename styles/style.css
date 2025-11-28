@@ -890,8 +890,7 @@ body.no-scroll {
     .les-img {
         width: 140px;
     }
-}
-
+    
     .content-wrapper h1,
     .main-title {
         font-size: 2.2rem; /* Un poco más pequeño para pantallas estrechas */
@@ -915,13 +914,13 @@ body.no-scroll {
 /* Botón Volver al Inicio (Sutil) */
 .back-home-btn {
     position: fixed;
-    top: 70px; /* Alineado con el de música */
+    top: 20px;
     left: 20px;
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5); /* Sutil y transparente */
-    border: 1px solid rgba(123, 31, 162, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(123, 31, 162, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -929,14 +928,20 @@ body.no-scroll {
     z-index: 900; /* Debajo del modal pero visible */
     transition: all 0.3s ease;
     color: var(--text-secondary);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(123, 31, 162, 0.2);
 }
 
 .back-home-btn:hover {
     background: white;
     transform: scale(1.1);
     color: var(--text-primary);
-    box-shadow: 0 4px 12px rgba(123, 31, 162, 0.2);
+    box-shadow: 0 4px 12px rgba(123, 31, 162, 0.3);
+    border-color: var(--text-secondary);
+}
+
+.back-home-btn:active {
+    transform: scale(0.95);
 }
 
 .back-home-btn svg {
@@ -948,10 +953,42 @@ body.no-scroll {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .back-home-btn {
-        top: 70px; /* Mantener alineación en móvil */
+        top: 10px;
         left: 10px;
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
+        background: white;
+        border: 2px solid rgba(123, 31, 162, 0.5);
+        box-shadow: 0 3px 10px rgba(123, 31, 162, 0.25);
+    }
+    
+    .back-home-btn svg {
+        width: 22px;
+        height: 22px;
+        stroke-width: 2.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-home-btn {
+        top: 10px;
+        left: 10px;
+        width: 44px;
+        height: 44px;
+        background: white;
+        border: 2px solid rgba(123, 31, 162, 0.6);
+        box-shadow: 0 3px 10px rgba(123, 31, 162, 0.3);
+    }
+    
+    .back-home-btn svg {
+        width: 22px;
+        height: 22px;
+        stroke-width: 2.5;
+    }
+    
+    .back-home-btn:active {
+        transform: scale(0.9);
+        background: rgba(255, 255, 255, 0.95);
     }
 }
 
@@ -1177,8 +1214,20 @@ body.no-scroll {
 /* En móvil también ajustamos */
 @media (max-width: 768px) {
     .volume-control-container {
+        top: 10px;
         right: 10px;
         left: auto; /* Resetear el left */
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    .volume-control-container {
+        top: 10px;
+        right: 10px;
+        width: 44px;
+        height: 44px;
     }
 }
 
