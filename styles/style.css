@@ -199,42 +199,41 @@ body.no-scroll {
     
     /* Ajustar altura del contenedor de banderines */
     .bunting-container {
-        height: 120px;
-        top: -15px;
+        height: 100px;
+        top: 0;
     }
     
     .bunting-line {
-        height: 110px;
-        top: -50px;
-        width: 100%;
-        left: 0;
+        height: 80px;
+        top: -30px;
+        width: 110%;
+        left: -5%;
+        border-bottom-width: 2px;
     }
     
     /* Reposicionar los 8 banderines para seguir perfectamente la curva de la cuerda */
-    /* La cuerda tiene border-radius 50% con height 110px, top -50px */
-    /* El punto más bajo está en el centro (50% horizontal) */
-    /* Los extremos deben estar más altos para seguir la curva */
+    /* La curva es más suave, los extremos suben menos */
     
-    /* Extremos izquierdo y derecho: más altos (suben más) */
-    .flag:nth-child(2)  { left: 2%;   top: 38px; transform: rotate(-18deg); }
-    .flag:nth-child(9)  { left: 93%;  top: 38px; transform: rotate(18deg); }
+    /* Extremos izquierdo y derecho */
+    .flag:nth-child(2)  { left: 5%;   top: 28px; transform: rotate(-15deg); }
+    .flag:nth-child(9)  { left: 88%;  top: 28px; transform: rotate(15deg); }
     
-    /* Segundo par desde los extremos: bajan un poco */
-    .flag:nth-child(3)  { left: 15%;  top: 46px; transform: rotate(-12deg); }
-    .flag:nth-child(8)  { left: 80%;  top: 46px; transform: rotate(12deg); }
+    /* Segundo par desde los extremos */
+    .flag:nth-child(3)  { left: 18%;  top: 36px; transform: rotate(-10deg); }
+    .flag:nth-child(8)  { left: 75%;  top: 36px; transform: rotate(10deg); }
     
-    /* Tercer par: más cerca del centro, bajan más */
-    .flag:nth-child(4)  { left: 28%;  top: 52px; transform: rotate(-6deg); }
-    .flag:nth-child(7)  { left: 67%;  top: 52px; transform: rotate(6deg); }
+    /* Tercer par: más cerca del centro */
+    .flag:nth-child(4)  { left: 31%;  top: 42px; transform: rotate(-5deg); }
+    .flag:nth-child(7)  { left: 62%;  top: 42px; transform: rotate(5deg); }
     
     /* Centro: punto más bajo de la curva */
-    .flag:nth-child(5)  { left: 41%;  top: 56px; transform: rotate(-2deg); }
-    .flag:nth-child(6)  { left: 54%;  top: 56px; transform: rotate(2deg); }
+    .flag:nth-child(5)  { left: 42%;  top: 46px; transform: rotate(-2deg); }
+    .flag:nth-child(6)  { left: 53%;  top: 46px; transform: rotate(2deg); }
     
     /* Ajustar tamaño de banderines en móvil */
     .flag {
-        width: 35px;
-        height: 50px;
+        width: 30px;
+        height: 42px;
     }
 }
 
