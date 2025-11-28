@@ -206,10 +206,11 @@
 
 @media (max-width: 480px) {
     .giant-content {
-        height: 200px;
+        height: 160px; /* Menor altura para que no asome tanto */
         padding: 10px;
         left: 5%;
         width: 90%;
+        transform: translateY(30px); /* Empujado hacia abajo para esconderse */
     }
 }
 
