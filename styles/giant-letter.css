@@ -79,7 +79,7 @@
 
 @media (max-width: 768px) {
     .giant-envelope {
-        width: 92vw;
+        width: 85vw;
         max-width: 400px;
         height: 280px;
     }
@@ -87,9 +87,9 @@
 
 @media (max-width: 480px) {
     .giant-envelope {
-        width: 95vw;
-        max-width: 350px;
-        height: 240px;
+        width: 85vw;
+        max-width: 320px;
+        height: 220px;
     }
 }
 
@@ -199,17 +199,17 @@
     .giant-content {
         height: 240px;
         padding: 15px;
-        left: 4%;
-        width: 92%;
+        left: 5%;
+        width: 90%;
     }
 }
 
 @media (max-width: 480px) {
     .giant-content {
-        height: 220px;
-        padding: 12px;
-        left: 3%;
-        width: 94%;
+        height: 200px;
+        padding: 10px;
+        left: 5%;
+        width: 90%;
     }
 }
 
@@ -232,8 +232,10 @@
 
 @media (max-width: 480px) {
     .giant-envelope.open .giant-content {
-        min-height: 250px;
-        transform: translateY(-30px);
+        min-height: auto;
+        max-height: 50vh;
+        transform: translateY(-25px);
+        overflow-y: auto;
     }
 }
 
@@ -261,8 +263,8 @@
 
 @media (max-width: 480px) {
     .letter-paper {
-        padding: 10px;
-        font-size: 0.85rem;
+        padding: 8px;
+        font-size: 0.8rem;
         line-height: 1.3;
     }
 }
@@ -284,8 +286,8 @@
 
 @media (max-width: 480px) {
     .letter-paper h2 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
         letter-spacing: 0.5px;
     }
 }
