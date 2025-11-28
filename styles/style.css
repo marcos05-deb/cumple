@@ -1311,7 +1311,7 @@ body.no-scroll {
 /* Perros (Izquierda) */
 .dogs-image-container {
     position: fixed;
-    bottom: -25px; /* Bajado para que no flote tanto */
+    bottom: 0; /* Ajustado a 0 para que esté al nivel del suelo */
     left: 0;
     z-index: 1300; /* Sobre el footer (1200) */
     pointer-events: none;
@@ -1327,7 +1327,7 @@ body.no-scroll {
 /* Cumpleañera (Derecha) */
 .birthday-girl-container {
     position: fixed;
-    bottom: -20px; /* Bajado ligeramente también */
+    bottom: 0; /* Ajustado a 0 */
     right: 0;
     z-index: 1300; /* Sobre el footer (1200) */
     pointer-events: none;
@@ -1343,59 +1343,59 @@ body.no-scroll {
 /* Responsive para las nuevas imágenes */
 @media (max-width: 768px) {
     .dogs-img { 
-        width: 170px; 
+        width: 200px; 
     }
     .birthday-girl-img { 
-        width: 150px; 
+        width: 180px; 
     }
     
     .dogs-image-container {
-        bottom: -5px;
-        left: -15px;
+        bottom: 0;
+        left: -10px;
     }
     
     .birthday-girl-container {
-        bottom: -5px;
-        right: -15px;
+        bottom: 0;
+        right: -10px;
     }
 }
 
 @media (max-width: 480px) {
     /* En móvil pequeño, hacer las imágenes más pequeñas y ajustar posición */
     .dogs-img { 
-        width: 120px; 
+        width: 140px; 
     }
     .birthday-girl-img { 
-        width: 110px; 
+        width: 130px; 
     }
     
     .dogs-image-container {
-        bottom: 5px;
-        left: -10px;
+        bottom: 25px; /* Justo encima del footer pequeño */
+        left: -5px;
     }
     
     .birthday-girl-container {
-        bottom: 5px;
-        right: -10px;
+        bottom: 25px; /* Justo encima del footer pequeño */
+        right: -5px;
     }
 }
 
 @media (max-width: 360px) {
     /* En pantallas muy pequeñas, reducir aún más */
     .dogs-img { 
-        width: 90px; 
+        width: 110px; 
     }
     .birthday-girl-img { 
-        width: 80px; 
+        width: 100px; 
     }
     
     .dogs-image-container {
-        bottom: 10px;
-        left: -8px;
+        bottom: 20px;
+        left: -5px;
     }
     
     .birthday-girl-container {
-        bottom: 10px;
-        right: -8px;
+        bottom: 20px;
+        right: -5px;
     }
 }
