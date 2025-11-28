@@ -376,13 +376,16 @@ body.no-scroll {
 }
 
 .click-hint {
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Aumentado para que se vea mejor */
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    font-weight: 700;
-    color: var(--text-secondary);
-    margin-top: 0.5rem; /* Reducido para subirlo más */
+    font-weight: 800; /* Más bold */
+    color: var(--text-primary); /* Color más oscuro para mejor contraste */
+    margin-top: 0.3rem; /* Reducido para subirlo más */
     animation: pulse 2s infinite;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra para destacar */
+    z-index: 10; /* Asegurar que esté visible */
+    position: relative;
 }
 
 @keyframes pulse {
