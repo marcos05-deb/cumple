@@ -36,7 +36,7 @@
 
 @media (max-width: 480px) {
     .final-letter-wrapper {
-        padding-top: 60px;
+        padding-top: 120px;
         padding-bottom: 30px;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
@@ -459,8 +459,14 @@
     }
     
     .gissi-corner-img {
-        width: 200px;
+        width: 180px;
         right: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gissi-corner-img {
+        width: 140px;
     }
 }
 
@@ -490,7 +496,7 @@
     }
     
     .gissi-corner-img {
-        width: 140px;
+        width: 110px;
         right: -5px;
     }
 }
