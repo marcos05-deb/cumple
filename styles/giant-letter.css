@@ -206,22 +206,25 @@
 
 @media (max-width: 480px) {
     .giant-content {
-        height: 160px; /* Menor altura para que no asome tanto */
+        height: 80px; /* Altura mínima inicial */
         padding: 10px;
         left: 5%;
         width: 90%;
-        transform: translateY(30px); /* Empujado hacia abajo para esconderse */
+        transform: translateY(100px); /* Escondido muy abajo */
+        opacity: 0; /* Totalmente invisible al principio */
+        transition: all 0.5s ease;
     }
 }
 
 .giant-envelope.open .giant-content {
     transform: translateY(-50px);
+    opacity: 1; /* Aparece al abrir */
     z-index: 6;
     height: auto;
     min-height: 300px;
     overflow: visible;
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s, z-index 0s 0.4s;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s, z-index 0s 0.4s, opacity 0.5s 0.4s;
 }
 
 @media (max-width: 768px) {
