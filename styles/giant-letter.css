@@ -35,7 +35,7 @@
 
 @media (max-width: 768px) {
     .final-letter-wrapper {
-        padding-top: 22vh;
+        padding-top: 28vh;
         padding-bottom: 60px;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
@@ -44,7 +44,7 @@
 
 @media (max-width: 480px) {
     .final-letter-wrapper {
-        padding-top: 20vh;
+        padding-top: 30vh;
         padding-bottom: 50px;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
