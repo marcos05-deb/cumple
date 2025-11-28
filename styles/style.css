@@ -376,16 +376,26 @@ body.no-scroll {
 }
 
 .click-hint {
-    font-size: 1.4rem; /* Aumentado para que se vea mejor */
+    font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    font-weight: 800; /* Más bold */
-    color: var(--text-primary); /* Color más oscuro para mejor contraste */
-    margin-top: 0.3rem; /* Reducido para subirlo más */
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-top: 1rem;
     animation: pulse 2s infinite;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra para destacar */
-    z-index: 10; /* Asegurar que esté visible */
-    position: relative;
+}
+
+/* Solo para escritorio - hacer el texto más visible */
+@media (min-width: 769px) {
+    .click-hint {
+        font-size: 1.5rem !important; /* Más grande en escritorio */
+        font-weight: 800 !important; /* Más bold */
+        color: var(--text-primary) !important; /* Color más oscuro */
+        margin-top: 0.3rem !important; /* Subirlo más */
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9) !important; /* Sombra blanca para destacar */
+        z-index: 10;
+        position: relative;
+    }
 }
 
 @keyframes pulse {
