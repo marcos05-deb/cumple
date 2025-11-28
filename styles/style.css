@@ -819,7 +819,7 @@ body.no-scroll {
 .les-image-container {
     position: fixed; /* Fijo para que siempre se vea en la esquina */
     bottom: 0;
-    left: -60px; /* Más a la izquierda */
+    left: 0;
     z-index: 1300; /* Por encima del footer (1200) */
     width: auto;
     margin: 0;
@@ -844,8 +844,12 @@ body.no-scroll {
 }
 
 @media (max-width: 768px) {
+    .les-image-container {
+        left: -20px;
+    }
+    
     .les-img {
-        width: 210px; /* Ajuste para tablet/móvil */
+        width: 180px; /* Ajuste para tablet/móvil */
         opacity: 0.9; 
     }
     
@@ -864,10 +868,13 @@ body.no-scroll {
 }
 
 @media (max-width: 480px) {
+    .les-image-container {
+        left: -10px;
+        bottom: 0;
+    }
+    
     .les-img {
         width: 140px; /* Más pequeño en móviles */
-        left: -15px;
-        bottom: -5px; /* Ajustado para estar sobre el footer pero no flotando */
     }
 
     .content-wrapper h1,
