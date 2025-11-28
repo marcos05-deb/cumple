@@ -258,6 +258,8 @@ document.addEventListener('DOMContentLoaded', () => {
             finalLetterScreen.style.display = 'flex';
             void finalLetterScreen.offsetWidth;
             finalLetterScreen.classList.add('active');
+            // Prevenir scroll en el body
+            document.body.classList.add('no-scroll');
         }, 500);
     });
 
@@ -300,6 +302,8 @@ document.addEventListener('DOMContentLoaded', () => {
     backToGridBtn.addEventListener('click', () => {
         finalLetterScreen.classList.remove('active');
         if (gissiImg) gissiImg.classList.remove('visible');
+        // Restaurar scroll en el body
+        document.body.classList.remove('no-scroll');
         setTimeout(() => {
             giantEnvelope.classList.remove('open');
             finalLetterScreen.style.display = 'none';

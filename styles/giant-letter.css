@@ -30,6 +30,7 @@
     padding-right: 1rem;
     box-sizing: border-box;
     overflow: hidden;
+    position: relative;
 }
 
 @media (max-width: 768px) {
