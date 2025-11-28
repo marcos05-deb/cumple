@@ -323,7 +323,7 @@ body.no-scroll {
 .gift-icon {
     width: 280px; /* Reducido de 320px para ver el texto */
     height: auto;
-    margin-bottom: 2rem; /* Aumentado para subirlo más */
+    margin-bottom: 3rem; /* Aumentado más para subirlo */
     filter: drop-shadow(0 10px 20px rgba(123, 31, 162, 0.2));
 }
 
