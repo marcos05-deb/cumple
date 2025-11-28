@@ -381,7 +381,7 @@ body.no-scroll {
     letter-spacing: 0.2em;
     font-weight: 700;
     color: var(--text-secondary);
-    margin-top: 1rem;
+    margin-top: 0.5rem; /* Reducido para subirlo más */
     animation: pulse 2s infinite;
 }
 
