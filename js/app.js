@@ -15,7 +15,9 @@ const VIDEOS = [
     { id: 13, src: 'videos/video13.mp4', title: 'Luis' },
     { id: 14, src: 'videos/video14.mp4', title: 'Blanqui C.' },
     { id: 15, src: 'videos/video15.mp4', title: 'Karen' },
-    { id: 16, src: 'videos/video16.mp4', title: 'Diego G. A.' },
+    { id: 16, src: 'videos/video16.mp4', title: 'Diego Gald.' },
+    { id: 17, src: 'videos/video17.mp4', title: 'Tito y Andy' },
+    { id: 18, src: 'videos/video18.mp4', title: 'Adriana' },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
