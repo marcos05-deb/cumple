@@ -44,8 +44,14 @@ body {
     line-height: 1.5;
     min-height: 100vh;
     overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
+}
+
+/* Evitar scroll cuando la pantalla final está activa */
+body:has(#final-letter-screen.active) {
+    overflow-y: hidden;
 }
 
 /* Layout */
