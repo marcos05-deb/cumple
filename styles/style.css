@@ -953,42 +953,30 @@ body.no-scroll {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .back-home-btn {
-        top: 10px;
-        left: 10px;
-        width: 44px;
-        height: 44px;
-        background: white;
-        border: 2px solid rgba(123, 31, 162, 0.5);
-        box-shadow: 0 3px 10px rgba(123, 31, 162, 0.25);
+        top: 15px;
+        left: 15px;
+        width: 42px;
+        height: 42px;
     }
     
     .back-home-btn svg {
         width: 22px;
         height: 22px;
-        stroke-width: 2.5;
     }
 }
 
 @media (max-width: 480px) {
     .back-home-btn {
-        top: 10px;
-        left: 10px;
-        width: 44px;
-        height: 44px;
-        background: white;
-        border: 2px solid rgba(123, 31, 162, 0.6);
-        box-shadow: 0 3px 10px rgba(123, 31, 162, 0.3);
+        top: 12px;
+        left: 12px;
+        width: 40px;
+        height: 40px;
     }
     
     .back-home-btn svg {
-        width: 22px;
-        height: 22px;
-        stroke-width: 2.5;
-    }
-    
-    .back-home-btn:active {
-        transform: scale(0.9);
-        background: rgba(255, 255, 255, 0.95);
+        width: 20px;
+        height: 20px;
+        stroke-width: 2;
     }
 }
 
@@ -1214,20 +1202,8 @@ body.no-scroll {
 /* En móvil también ajustamos */
 @media (max-width: 768px) {
     .volume-control-container {
-        top: 10px;
         right: 10px;
         left: auto; /* Resetear el left */
-        width: 44px;
-        height: 44px;
-    }
-}
-
-@media (max-width: 480px) {
-    .volume-control-container {
-        top: 10px;
-        right: 10px;
-        width: 44px;
-        height: 44px;
     }
 }
 
